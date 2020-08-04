@@ -7,19 +7,27 @@ spicy_foods = [
 ]
 
 def print_spicy_foods(spicy_foods)
-
+  spicy_foods.each do |el|
+    puts el[:name]+"(#{el[:cuisine]})"+" | "+"Heat Level: "+"🌶"*el[:heat_level]
+  end
 end
 
 def get_names(spicy_foods)
-
+  spicy_foods.map do |el|
+    el[:name]
+  end
 end
 
 def spiciest_foods(spicy_foods)
-
+  spicy_foods.select do |el|
+    el[:heat_level]>5
+  end
 end
 
 def get_spicy_food_by_cuisine(spicy_foods, cuisine)
-
+  spicy_foods.find do |el|
+    el[:cuisine]=cuisine
+  end
 end
 
 # BONUS Deliverables
